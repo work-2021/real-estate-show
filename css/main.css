@@ -1,0 +1,218 @@
+@font-face {
+  font-family: "poppins-r";
+  src: url("../font/poppins-regular.ttf");
+}
+
+@font-face {
+  font-family: "poppins-eb";
+  src: url("../font/poppins-extra-bold.ttf");
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "poppins-r";
+}
+h2, h4 {
+  font-family: "poppins-eb";
+  color: #353535;
+}
+body {
+  width: 100%;
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.offer {
+  width: 90%;
+  background-color: #fafafa;
+  box-shadow: 2px 6px 25px rgba(20,20,20,.15);
+  border-radius: 10px 10px 5px 5px;
+  position: relative;
+}
+@media (min-width: 680px) {
+  body {
+    align-items: flex-start;
+    justify-content: space-evenly;
+  }
+  .offer {
+    width: 45%;
+  }
+}
+@media (min-width: 980px) {
+  body {
+    justify-content: space-around;
+  }
+  .offer {
+    width: 32%;
+  }
+}
+.offer.special:after {
+  content: "Featured";
+  width: 34%;
+  height: 30px;
+  font-size: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "poppins-eb";
+  letter-spacing: 1px;
+  border-radius: 0 4px 4px 0;
+  background-color: #EFB218;
+  color: #fff;
+  position: absolute;
+  left: -5px;
+  top: 14px;
+  pointer-events: none;
+}
+.offer.special:before {
+  content: "";
+  border: 4px solid red;
+  border-color: #CB9305 #CB9305 transparent transparent;
+  position: absolute;
+  left: -5px;
+  top: 44px;
+}
+.offer:not(:last-of-type) {
+  margin-bottom: 40px
+}
+.offer .img-box {
+  height: 216px;
+  border-radius: 10px 10px 0 0;
+  position: relative;
+  overflow: hidden;
+}
+.offer .img-box .view {
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to top,#07B7A6,transparent);
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(100%);
+  pointer-events: none;
+  transition: .4s;
+}
+.offer .img-box .view button {
+  color: #fff;
+  background-color: transparent;
+  padding: 5px 8px;
+  font-family: "poppins-eb";
+  border: 1.4px solid #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1em;
+  cursor: pointer;
+  pointer-events: auto;
+  border-radius: 2px;
+}
+.offer .img-box img:first-of-type:hover ~ .view {
+  transform: translateY(0);
+}
+.offer .img-box.hot:after {
+  content: "HOT";
+  padding: 2px 8px;
+  color: white;
+  font-family: "poppins-eb";
+  letter-spacing: 1px;
+  border-radius: 4px;
+  font-size: .9em;
+  background-color: red;
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  pointer-events: none;
+}
+.offer .img-box img:first-of-type {
+  width: 100%;
+  height: 100%;
+}
+.offer .img-box img:not(:first-of-type) {
+  width: 12%;
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  filter: drop-shadow(0 0 2px rgba(60,60,60,.9));
+  cursor: pointer;
+}
+.offer .img-box img:nth-of-type(2) {
+  right: 45px;
+  transition: .4s;
+}
+.offer .content {
+  padding: 20px 12px;
+}
+.offer .content .title h2 {
+  font-size: 1.2em;
+}
+.offer .content .title p {
+  font-size: .86em;
+  margin: 6px 0 10px;
+  color: #777;
+}
+@media (min-width: 680px) {
+  .offer:nth-of-type(2) .content .title p {
+    width: 96%;
+  }
+}
+.offer .content .features {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+}
+.offer .content .features .feature,
+.offer .content .cost {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.offer .content .cost {
+  width: 100%;
+}
+.offer .content .features .feature h4 ,
+.offer .content .cost h4 {
+  font-size: .9em;
+  margin-bottom: 5px;
+  width: 100%;
+}
+.offer .content .cost h4 {
+  text-transform: uppercase;
+}
+.offer .content .features .feature span {
+  font-size: 1em;
+  font-family: "poppins-eb";
+  margin-left: 5px;
+}
+.offer .content .features .feature img {
+  width: 24px;
+}
+.offer .content .cost span {
+  font-size: 1.4em;
+  font-family: "poppins-eb";
+  color: #0AB6A5;
+}
+.offer .content .cost button {
+  margin-left: auto;
+  width: 34%;
+  min-height: 35px;
+  background-color: #0AB6A5;
+  color: white;
+  font-family: "poppins-eb";
+  font-size: 1em;
+  letter-spacing: 1px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 4px;
+  box-shadow: 2px 2px 10px rgba(30,30,30,.15);
+}
